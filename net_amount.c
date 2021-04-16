@@ -1,5 +1,4 @@
 // Net amount calculation
-
 #include <stdio.h>
 
 void main()
