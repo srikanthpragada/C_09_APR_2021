@@ -15,6 +15,7 @@ void main()
      printf("\nEnter number :");
      scanf("%d",&n);
 
+     // Linear Search
      for(i=0; i < 10; i ++)
      {
          if(a[i] == n)
