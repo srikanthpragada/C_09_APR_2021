@@ -1,14 +1,21 @@
+#include <stdio.h>
+#include <string.h>
+#define  NAMESIZE 30
+
 struct product
 {
   // Members
   int id;
-  char name[30];
+  char name[NAMESIZE];
   int price;
 };
+
+typedef struct product PROD;
 
 void main()
 {
   struct product p1;
+  PROD p2;
 
     p1.id = 1;
     strcpy(p1.name,"Power Beats Pro");
