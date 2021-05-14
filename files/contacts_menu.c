@@ -11,6 +11,11 @@ struct contact {
    char mobile[11];
 };
 
+struct node  {
+   struct contact data;
+   struct node * next;
+};
+
 void add_contact(FILE*);
 void list_contacts(FILE*);
 void search_contacts(FILE*);
@@ -174,7 +179,7 @@ void search_contacts(FILE * fp)
          // if contact name contains given name
          // Convert both names to upper to do case insensitive search
          strcpy(contact_name,c.name);
-         if(strstr( strupr(contact_name), strupr(name)) != NULL)
+         if(strstr( strupr(contact_name), strupr(name)) != NULL)  // found
              printf("%-20s %-30s %s\n", c.name,c.email,c.mobile);
        }
 

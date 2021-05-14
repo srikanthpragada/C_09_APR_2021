@@ -12,17 +12,20 @@ struct product
 void main()
 {
    FILE * fp;
-   int count;
+   int count,id, pos;
    struct product prod;
 
    // open file
    fp = fopen("products.dat","rb");
-
-
-       count = fread(&prod,sizeof(struct product),1,fp);
-       if (count == 0)  // EOF
-         break;
+   printf("Enter product id : ");
+   scanf("%d",&id);
+   pos = (id - 1) * sizeof(struct product);
+   fseek(fp, pos, SEEK_SET);
+   count = fread(&prod,sizeof(struct product),1,fp);
+   if (count == 1)  // EOF
        printf("%3d %-20s  %6d\n", prod.id, prod.name, prod.price);
+   else
+       printf("Not found!");
 
    fclose(fp);
 }
